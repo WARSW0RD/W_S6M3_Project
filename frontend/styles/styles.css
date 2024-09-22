@@ -1,12 +1,14 @@
 @font-face {
   font-family: 'Titillium Web';
   src: url('../fonts/TitilliumWeb-SemiBold.ttf');
+  
 }
 
 body {
   font-family: 'Titillium Web', sans-serif;
   display: flex;
   flex-direction: column;
+  background-color: black;
 }
 
 #root {
@@ -26,11 +28,71 @@ h1, h2 {
   border-bottom: 1px solid grey;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  color: white;
 }
 
 header, footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 0%;
+  color: white;
 }
+
+header{
+  border-bottom: 1px solid white;
+  padding-bottom: 2rem;
+}
+.star{
+  position: absolute;
+  background-color: white;
+}
+
+
+
+
+img, .planets{
+  padding-top: 5%;
+  padding-inline-start: 2%;
+  padding-bottom: 0%;
+  width: 10%;
+  float: right;
+  
+}
+
+
+.saturn{
+  width: 130%;
+  
+  
+}
+
+.pluto{
+  padding-top: 5%;
+  text-align: center;
+  display: block;
+  width: 50%;
+}
+
+
+#photo{
+  border-top: 2px solid white;
+  padding: 0%;
+  width: 300px;
+  height: 250px;
+  float: none;
+  margin: auto;
+  border: 5px solid white;
+  border-image: fill;
+  margin-bottom: 2rem;
+  
+  
+}
+
+.line{
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+
