@@ -1,12 +1,42 @@
 import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 
-function App() {
+const web = 'http://localhost:9009/api/apod?api_key=DEMO_KEY'
+
+function Card({title, text, url, date}) {
   return (
-    <p>
-      Read through the instructions in the README.md file to build your NASA
-      app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-    </p>
+
+    <div className="APOD">
+        <h2 className="pTitle">{title}</h2>
+        <p>Captured on {date}</p>
+        <img className="photo" src={url} />
+        <p className="descr">{text}</p>
+    </div>
+    )
+}
+
+function App() {
+  const [apod, setApod] = useState()
+  const [data, setData] = useState()
+  axios.get(web)
+    .then(res => {
+      console.log(res.data)
+      setApod(res.data)
+    })
+    .catch(error => {
+      console.error('Error... fetching data', error);
+    })
+    if (!apod) return 'Fetching photo of the day...'
+  return (
+    
+    <section>
+      <Card
+      title={apod.title}
+      text = {apod.explanation}
+      url = {apod.url}
+      date = {apod.date}
+      />
+    </section>
   )
 }
 
