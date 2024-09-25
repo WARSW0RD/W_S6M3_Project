@@ -1,7 +1,11 @@
 import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 
-const web = 'http://localhost:9009/api/apod?api_key=DEMO_KEY'
+
+const month = Math.floor(Math.random() * 12)
+const day = Math.floor(Math.random() * 28)
+const Akey = 'eLK4saZKxM8hct76YbR0hNscxLLn7WWkQArWUea2' 
+const web = `https://api.nasa.gov/planetary/apod?api_key=${Akey}`
 
 function Card({title, text, url, date}) {
   return (
@@ -18,14 +22,19 @@ function Card({title, text, url, date}) {
 function App() {
   const [apod, setApod] = useState()
   const [data, setData] = useState()
-  axios.get(web)
-    .then(res => {
-      console.log(res.data)
-      setApod(res.data)
-    })
-    .catch(error => {
-      console.error('Error... fetching data', error);
-    })
+
+
+  useEffect(() => {
+    
+    axios.get(web)
+      .then(res => {
+        console.log(res.data)
+        setApod(res.data)
+      })
+      .catch(error => {
+        console.error('Error... fetching data', error);
+      })
+  }, [])
     if (!apod) return 'Fetching photo of the day...'
   return (
     
