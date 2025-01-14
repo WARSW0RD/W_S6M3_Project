@@ -27,7 +27,7 @@ body {
   align-items: center;
 }
 
-h1, h2 {
+h1 {
   color: #93005a;
 }
 
@@ -91,29 +91,9 @@ img{
 }
 
 
-.photo{
-  border-top: 2px solid white;
-  padding: 0%;
-  width: 600px;
-  height: 500px;
-  float: none;
-  margin: auto;
-  border: 5px solid white;
-  border-image: fill;
-  margin-bottom: 2rem;
-  
-  
-  
-}
 
 
-.pTitle{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 0%;
-  
-}
+
 
  .descr{
   
@@ -126,14 +106,7 @@ img{
   border-left: #93005a;
 }
 
-p{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  padding-bottom: 3%;
 
-}
 
 .page-wrap{
   overflow-x: hidden;
